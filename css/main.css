@@ -78,20 +78,27 @@ p{
 }
 
 /* Social links*/
+
+/*Cambio del margen para subir las imagenes*/
 .social-links{
     list-style: none;
     padding: 0;
-    margin-top: 3em;
+    margin-top: -2em;
+    margin-bottom: 3em;
     display: flex;
     flex-direction: row;
     justify-content: center
 
 }
 
+
+/*Se agrega margin left 25px*/
+
 .social-links li a{
     color: #D7DEE6;
     text-decoration: none;
-    font-size: 2.5em;
+    font-size: 8em;
+    margin-left: 25px;
 }
 
 
@@ -154,15 +161,43 @@ p{
 
 /* About */
 
+/*AGREGANDO EL GRID PARA QUE SEAN 2 COLUMNAS
+Y AGREGANDO EL BIO-INFO Y CONTACT*/
+
 .about{
     margin-top: 2em;
 }
 
+.about .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 1fr;
+}
+
+.bio-info{
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    grid-gap: 5px;
+    justify-items: center;
+}
+
+.contact {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+/*Se le agrega el grid*/
 .about h2 {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1.125em;
     margin: 2em;
+    display: grid; 
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    align-content: center
 }
 
 .bio-info img{
@@ -258,6 +293,11 @@ footer .social-links {
     color: white;
     text-decoration: none;
     
+}
+
+/*cambio al color de la palabra contacto del menu */
+#menu li:last-child a {
+    color: red;
 }
 
 /* Pesonalizando estilo para tablets*/
