@@ -11,6 +11,14 @@
     font-size: calc(0.5em + 1vh);
 }
 
+/*CAMBIANDO FONT SIZE*/
+/*#menu {
+    font-size: calc(40px + 1vh);
+    margin:0;
+    padding: 0;
+    bottom: 100px;
+}
+*/
 /* El estilo base para moviles */
 body {
     background-color: #112935;
@@ -100,7 +108,7 @@ p{
     color: #D7DEE6;
     text-decoration: none;
     font-size: 8em;
-    margin-left: 25px;
+    margin: 1.5vh;
 }
 
 
@@ -163,6 +171,9 @@ p{
 
 /* About */
 
+/*AGREGANDO EL FLEX PARA QUE SEAN 2 COLUMNAS
+Y AGREGANDO EL BIO-INFO Y CONTACT*/
+
 /*AGREGANDO EL GRID PARA QUE SEAN 2 COLUMNAS
 Y AGREGANDO EL BIO-INFO Y CONTACT*/
 
@@ -207,6 +218,8 @@ Y AGREGANDO EL BIO-INFO Y CONTACT*/
 .bio-info img{
    width: 200px;
 }
+
+
 
 .bio-info p{
     font-size: 16px;
@@ -299,10 +312,16 @@ footer .social-links {
     
 }
 
-/*cambio al color de la palabra contacto del menu */
-#menu li:last-child a {
+
+/*AGREGANDO HOVER*/
+.menu li a:hover{
     color: red;
 }
+
+.show-desktop li a {
+    font-size: calc()
+}
+
 
 /* Pesonalizando estilo para tablets*/
 @media only screen and (min-width: 768px) {
@@ -346,8 +365,6 @@ footer .social-links {
     }
 
 
-
-
     /*TODO: FALTA CSS */
 } 
 
@@ -369,6 +386,25 @@ footer .social-links {
     }
 }
 
+/*Se agrega una media query con el tama;o de la pantalla de iPhone**/
+@media only screen and (max-width: 750px) {
+
+    .about .container{
+        display:flex;
+        flex-wrap: wrap;
+    }
+    }
+
+    
+@media only screen and (min-width: 1440px) {
+
+    /*TODO: FALTA CSS */
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        max-width: 1440px;
+    }
+}
 
 /*AGREGADO*/
 a.hide-mobile.show-desktop{
