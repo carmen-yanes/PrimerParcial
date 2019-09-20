@@ -18,10 +18,22 @@ body {
     font-weight: 400;
 }
 
+
+/*Modificando header con flex*/
 .header {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
+}
+
+#menu {
+    margin: 0.7em; 
+    padding: 0;
+}
+
+img.logo {
+    margin: 1em;
+    width: 9em;
 }
 
 .src-only {
@@ -68,20 +80,26 @@ p{
     font-size: 1.6rem;
 }
 
+
+
+
 /* Big area */
+
 .big-hero img {
     width: 150px;
 }
 
+/*Cambiando el tama;o de letra de h2 y p del big hero*/
+
 .big-hero h2 {
-    font-size: 1.875em;
+    font-size: 2.5em;
     font-weight: 700;
     letter-spacing: 0.002em;
     margin-top: 1em ;
 }
 
 .big-hero p {
-    font-size: 0.7em;;
+    font-size: 1em;;
     color: #D7DEE6;
 
 }
@@ -92,7 +110,7 @@ p{
 .social-links{
     list-style: none;
     padding: 0;
-    margin-top: -2em;
+    margin-top: -5em;
     margin-bottom: 3em;
     display: flex;
     flex-direction: row;
@@ -119,7 +137,10 @@ p{
 .post {
     padding: 1em;
     margin-bottom: -2px;
+ 
 }
+
+/*Negrita para el h2*/
 .post h2 {
     text-transform: uppercase;
     font-weight: 700;
@@ -137,12 +158,26 @@ p{
     margin: 2rem auto;
 }
 
+/*Cambiando el grosor de los articulos y agrgando flex*/
 .post ul li article {
     overflow: hidden;
     border-radius: 10px;
     background-color: #ffffff;
     text-align: left;
     padding-bottom: 2em;
+    width: 270px;
+
+}
+
+/*Agregando flex a los li*/
+
+
+.post ul li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
 }
 
 .post article img{
@@ -159,6 +194,7 @@ p{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: bold;
 }
 
 .post article p {
@@ -218,7 +254,6 @@ Y AGREGANDO EL BIO-INFO Y CONTACT*/
 }
 
 
-
 .bio-info p{
     font-size: 16px;
     padding: 2em;
@@ -251,12 +286,6 @@ Y AGREGANDO EL BIO-INFO Y CONTACT*/
     width: 100%;
 }
 
-#Contactar {
-    width: 50%;
-}
-
-
-
 
 /* Decorando placeholder */
 
@@ -287,9 +316,17 @@ footer{
 }
 
 footer .social-links {
-    margin: 0;
+margin: 0;
+
 }
 
+/*Arreglando el footer para que aparezca mas pequenio*/
+footer .social-links li{
+    margin: -4em 0em -2.3em; 
+    padding: 0em 1em;
+    font-size: 20px;
+    }
+    
 .menu {
     background-color: #112935;
     position: absolute;
@@ -326,6 +363,18 @@ footer .social-links {
 .show-desktop li a {
     font-size: calc()
 }
+
+
+input:last-child {
+    width: 50%;
+}
+
+/*Agregano negrita a la parte del form*/
+
+.contact-form label{
+    font-weight: bold;
+}
+
 
 
 /* Pesonalizando estilo para tablets*/
@@ -406,13 +455,6 @@ footer .social-links {
         margin-right: 0.75em;
         margin-left: 0.75em;
     }
-
-    .options i:last-child {
-        font-size: 3rem;
-        display: flex;
-        color: #FFFFFF;
-        padding-top: 0.1em;
-    }
     
     .options{
         display: flex;
@@ -425,6 +467,10 @@ footer .social-links {
         margin-left: 50em;
         font-size: 50px;
         align-content: center;
+    }
+
+    input:last-child {
+        width: 100%;
     }
 
     }
@@ -448,11 +494,10 @@ a.hide-mobile.show-desktop{
     font-size: 8em;
     color:#0AC693
 }
+/*Agregando el 1920*/
 
-/*Cambiando tama;o del boton submit*/
+@media only screen and (min-width: 1920px){
 
-input:last-child {
-    width: 50%;
 }
 
 .show-desktop { 
