@@ -196,7 +196,6 @@ a la misma distancia del otro*/
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-
 }
 
 /*A las imágenes de cada artículo se les ponen los valores de ancho y alto 
@@ -431,13 +430,26 @@ input:last-child {
     font-weight: bold;
 }
 
-/*-------------------AGREGANDO PARA TODOS LOS DIPOSITIVOS------------------------------*/
+ /*En la clase show-desktop el tamaño de fuente será de 15px*/
+ .show-desktop { 
+    font-size: 15px;
+}
 
+/*Agregando flecha de color #0AC693*/
+a.hide-mobile.show-desktop{
+    margin-top: -1em;
+    margin-bottom: 0.5em;
+    justify-content: center;
+    font-size: 8em;
+    color:#0AC693
+}
 
+/*-------------------AGREGANDO MEDIA QUERIES------------------------------*/
 
 /* Pesonalizando estilo para tablets*/
 @media only screen and (min-width: 768px) {
-  
+    /*La lista desordenada de la clase post no tiene estilo de lista y se muestra un flex para alinear 
+    el contenido al centro, y se utiliza el wrap para que baje algo si no cabe*/
     .post ul {
         list-style: none;
         display: flex;
@@ -445,6 +457,8 @@ input:last-child {
         justify-content: center;
     }
     
+    /*En cada li se muestra una altura mínima y máxima, con margin arriba y abajo de 1rem y de los lados de 
+    2rem, aplicando flex en los valores grow shrink basis respectivamente*/
     .post ul li {
         min-height: 350px;
         max-height: 3500px;
@@ -452,20 +466,23 @@ input:last-child {
         flex: 1 0 300px;
     }
 
-
+    /*Se escribe el grosor del logo y el tamaño del margen*/
     .logo {
         width: 150px;
         margin: 1.5em;
     }
 
+    /*No se muestra la clase show-desktop en un bloque aparte*/
     .show-desktop {
         display: block;
     }
 
+    /*NO se muestra la clase hide-desktop*/
     .hide-desktop {
         display: none;
     }
 
+    /*Se agregan las especificaciones para la clase menu*/
     .menu {
         background-color: #112935; 
         position: static;
@@ -475,90 +492,541 @@ input:last-child {
         display: flex;
         margin-top: 1em;
     }
-    /*TODO: FALTA CSS */
+
+    /*Especificaciones para la clase fa-fas-bar cambiando margin a 50em*/
+    .fas.fa-bar{
+        margin-left: 50em;
+        font-size: 50px;
+        align-content: center;
+    }
 
 
+    /*A cada una de las orillas de los artículos se le hace un pequeño redondeado, se pone un color de fondo,  
+    se alinea el texto al lado izquierdo y se especifican los valores del padding superior y del grosor del
+    artículo*/
+    .post ul li article {
+        overflow: hidden;
+        border-radius: 10px;
+        background-color: #ffffff;
+        text-align: left;
+        padding-bottom: 2em;
+        width: 700px;
+    }
+}
 
+@media only screen and (min-width: 1024px) and (max-width: 1024){
+    /*Al header se le aplica flex para que con el space evenly el contenido se muestre distribuido 
+tal que el espacio entre cada cosa y el espacio a cada lado sea igual*/
+.header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+/*Se toma el id menu para quitarle el padding y el margin quede a 0.7 em*/
+#menu {
+    margin: 0.7em;
+    padding: 0;
+}
+
+/*Aquí se está tomando la imagen de clase logo donde se modifica el margin y el tamaño*/
+img.logo {
+    margin: 1em;
+    width: 9em;
+}
+
+/*No se mostrará la clase .src-only*/
+.src-only {
+    display: none;
+}
+
+/*No se mostrará la clase .hide-mobile*/
+.hide-mobile {
+    display: none;
+}
+
+/*A los párrafos se la pone un tamaño de letra 0.75em, también se modifica el padding y el interlineado*/
+p{
+    font-size: 0.75em;
+    padding: 1rem;
+    line-height: 25px;
+}
+
+/*Modificando tamaño del logo y el margin*/
+.logo {
+    width: 90px;
+    margin: 1em;
+}
+
+/*A la parte de opciones del menú el color es heredado, no lleva una decoraión de texto,
+se muestra cómo queda el posicionamiento, desde la parte de arriba y desde el lado derecho, 
+el tamaño de fuente también se modifica, y se agrega flex para que se comporten de modo wrap 
+se alinean los items al inicio del flex container y también el margen de la parte superior se 
+modifica*/
+
+.options {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    top: 30%;
+    right: 95%;
+    font-size: 1.5rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 0.2em;
+
+}
+
+/*Se modifica el tamaño de letra del último hijo de i de la clase options*/
+.options i:last-child {
+    font-size: 1.6rem;
+}
+
+/* Big area */
+
+/*Se ajusta el tamaño imagen de la clase big-hero*/
+.big-hero img {
+    width: 150px;
+}
+
+/*Se cambió el tamaño de la letra del h2 y se muestra cómo queda el grosor de las letras, 
+el espaciado entre letras y el margen de la parte superior*/
+.big-hero h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: 0.002em;
+    margin-top: 1em ;
+}
+
+/*A los párrafos de la clase big-hero se le agrega el tamaño de letra y el color*/
+.big-hero p {
+    font-size: 1em;;
+    color: #D7DEE6;
+
+}
+
+/* Social links*/
+
+/*Cambio del margen para subir las imagenes*/
+/*El margen se ajusta para que las imágenes aparezcan de la manera correcta, no
+existe un estilo de la lista, el padding es 0, se agrega un flex y se justifica
+el contenido al centro*/
+.social-links{
+    list-style: none;
+    padding: 0;
+    margin-top: -5em;
+    margin-bottom: 3em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+
+}
+
+/*A la clase social-links parte de
+A la imagen que hace referencia al twitter y github, dentro de la lista, dentro de la clase 
+social-links se le cambia el color, se deja sin decoración de texto y se modifica el tamaño 
+de letra a 8em y todo el margen a 1.5vh*/
+.social-links li a{
+    color: #D7DEE6;
+    text-decoration: none;
+    font-size: 8em;
+    margin: 1.5vh;
+}
+
+/*Se le agrega color al fondo de la clase green-area*/
+.green-area {
+    background-color: #0AC693; 
+}
+
+/*A la clase post se le modifica el padding y el margin de la parte superior queda a -2px*/
+.post {
+    padding: 1em;
+    margin-bottom: -2px;
+ 
+}
+
+/*Al título h2 de la clase post se pasa todo el texto a mayúsculas, el grosor de las letras 
+es de 700 y se fija el tamaño de letra y el margin*/
+.post h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.125em;
+    margin: 1em;
+}
+
+/*La lista desordenada de la clase post no tiene ningún estilo*/
+.post ul {
+    list-style: none;
+}
+
+/*A cada li de la lista de la clase post se le pone una altura minima y una anchura máxima 
+y también se modifica el margen arriba y abajo de 2rem y el de la izquiera y derecha es 
+automático*/
+.post ul li {
+    min-height: 300px;
+    max-width: 350px;
+    margin: 2rem auto;
+}
+
+/*A cada una de las orillas de los artículos se le hace un pequeño redondeado, se pone un color de fondo, 
+se alinea el texto al lado izquierdo y se especifican los valores del padding superior y del grosor del
+artículo*/
+.post ul li article {
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #ffffff;
+    text-align: left;
+    padding-bottom: 2em;
+    width: 270px;
+
+}
+
+/*Agregando flex a los li*/
+
+/*Se agrega un flex denominado space around que hace que hace que cada uno este 
+a la misma distancia del otro*/
+.post ul li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/*A las imágenes de cada artículo se les ponen los valores de ancho y alto 
+y se ajusta la imágen con la propiedad object-fit*/
+.post article img{
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*Al h3 se le agregan las propiedades de color, margen en la parte superior, padding de arriba y abajo
+0em y de cada lado 1rem, el tamaño de la letra, el white-space nowrap es que se muestra en una sola 
+línea, luego el text-overflow y el grosor de la fuente */
+.post article h3 {
+    color: #0D5061;
+    margin-top: 2em;
+    padding: 0em 1rem;
+    font-size: 0.9em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: bold;
+}
+
+/*En cada párrafo del texto se le pone un color, tamaño de letra 0.75em, paddin 1rem 
+y el interlineado de 35px*/
+.post article p {
+    color:#112935;
+    font-size: 0.75em;
+    padding: 1rem;
+    line-height: 35px;
+}
+
+/* About */
+
+/*AGREGANDO EL GRID PARA QUE SEAN 2 COLUMNAS
+Y AGREGANDO EL BIO-INFO Y CONTACT*/
+
+/*Se le pone el margen de la parte superior a 2em*/
+.about{
+    margin-top: 2em;
+}
+
+/*Se agrega esta clase containter dentro de la clase about que es la que tiene la bio-info 
+y el contact, para que se ajusten con un grid, se ponen 2 columnas del mismo tamaño y una 
+fila de 100px y la otra de lo que resta de espacio, se modifica el margen*/
+.about .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 1fr;
+    margin-top: -3em;
+    margin-bottom: 3em;
+}
+
+/*Esto se muestra de la parte izquierda, ya que utilizando grid se puede ubicar sólo utilizando 
+la primera columna y la segunda fila, al finalizar se ajustan los items y el contenido al centro
+ya sea horizontalmente o verticalmente*/
+.bio-info{
+    display: grid;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    grid-gap: 5px;
+    justify-items: center;
+    align-content: center;
+}
+
+/*La clase contact se muestra de la parte derecha del grid, ya que ocupa la segunda columna y la 
+segunda fila, se alineo el contenido al centro*/
+.contact {
+    display: grid;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    align-content: center;
+}
+
+/*En el h2 de la clase about también se utilizó grid para ubicarlo en la primera y segunda columna
+pero solo en la primera fila y se alinea al centro, las letras se transforman a mayúsculas, 
+el grosor de letra es de 700, también se le pone un tamaño de letra de 1.5 em y el margin de 2em*/
+.about h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5em;
+    margin: 2em;
+    display: grid; 
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    align-content: center
+}
+
+/*La imagen de la clase bio-info se ajusta a un grosor de 200px*/
+.bio-info img{
+   width: 200px;
+}
+
+/*Todo el párrafo de la clase bio-info tiene un tamaño de fuente de 16px, el padding de 2em, 
+se ha alineado el texto al lado izquierdo, y se ajusta el interlineado y el espacio entre letras*/
+.bio-info p{
+    font-size: 16px;
+    padding: 2em;
+    text-align: left;
+    line-height: 25px;
+    letter-spacing: 2px;
+}
+
+/*Se le agrega un flex a la clase contact, tomando como primera referencia a las columnas, 
+y también se alinea el texto al lado izquierdo, el padding superior e inferior de 0px y a cada
+lado de 1em*/
+.contact {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0px 1em;
+}
+
+/*Se establece el margen superior de la clase contacto, es un selector de 2 items*/
+.contact * + * {
+    margin-top: 1.5em;
+}
+
+/*A la clase contact-form se le agrega un flex para que tome en cuenta primero las columnas*/
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Establece las características del input y el text area de la clase contact-form*/
+.contact-form input, .contact-form textarea{
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0px 2em;
+    font-size: 1em;
+    width: 100%;
+}
+
+
+/* Decorando placeholder */
+
+::-webkit-input-placeholder { 
+    color: #D7DEE6; 
 } 
 
-@media only screen and (min-width: 1024px) {
+/*Ajustando características para diferentes navegadores*/
+:-moz-placeholder { /* Firefox 18- */ color: #D7DEE6; } 
+ 
+::-moz-placeholder { /* Firefox 19+ */ color: #D7DEE6; } 
+ 
+:-ms-input-placeholder { color: #D7DEE6; }
 
-       /*TODO: FALTA CSS */
+/*Esto toma en cuenta el botón de Contactar, pone el color, el grosor del texto, 
+el color de texto y el tamaño de texto*/
+.contact-form input[type=submit] {
+    background-color: #F74442;
+    font-weight: 400;
+    color: white;
+    font-size: 1rem;
+}
 
+/*Decora con una imagen la clase black-decoration*/
+.black-decoration{
+    background-image: url("../images/decoracion_oscura_small.svg");
+}
+
+/*Fija el color de las letras del footer y del fondo*/
+footer{
+    background-color: #0D5061;
+    color:#D7DEE6;
+}
+
+/*Quita el margen de la clase social-links del footer*/
+footer .social-links {
+    margin: 0;
+}
+
+/*A cada li de los social-links se les hacen cambios para que se ajusten al tamaño del footer
+y se vean bien*/
+footer .social-links li{
+    margin: -4em 0em -2.3em; 
+    padding: 0em 1em;
+    font-size: 20px;
+    }
+    
+/*Se muestra cómo a la clase menú se le ha puesto el color de fondo, la posición que es absoluta
+el z index que es lo que lo muestra enfrente de todo, el grosor de 100vw es como el viewport
+width que lo muestra completamente, igual con la altura que está calculada con una fórmula*/    
+.menu {
+    background-color: #112935;
+    position: absolute;
+    z-index: 20;
+    top: 60px;
+    right: 0;
+    width: 100vw;
+    height: calc(100vh - 60px);
+}
+
+/*Clase menú sin estilo, alineado a la izquierda, padding 1em*/
+.menu {
+    list-style: none;
+    text-align: left;
+    padding: 1em;
+}
+
+/*Los li de cada menu se muestran con un display block, y los valores de paddin y margen superior*/
+.menu li {
+    display: block;
+    padding: 0.5em;
+    margin-top: 5px;
+}
+
+/*Las referencias con color blanco y sin decoración*/
+.menu li a {
+    color: white;
+    text-decoration: none;  
+}
 
 
 }
 
 @media only screen and (min-width: 1440px) {
 
-    /*TODO: FALTA CSS */
+    /*La clase containter con un grosor de 80%, el margen 0 arriba y abajo y auto de cada lado, 
+    con un maximo grosor de 1440*/
     .container {
         width: 80%;
         margin: 0 auto;
         max-width: 1440px;
     }
+
+        /*La lista desordenada de la clase post no tiene estilo de lista y se muestra un flex para alinear 
+    el contenido al centro, y se utiliza el wrap para que baje algo si no cabe*/
+    .post ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    /*En cada li se muestra una altura mínima y máxima, con margin arriba y abajo de 1rem y de los lados de 
+    2rem, aplicando flex en los valores grow shrink basis respectivamente*/
+    .post ul li {
+        min-height: 350px;
+        max-height: 3500px;
+        margin: 1rem 2rem;
+        flex: 1 0 300px;
+    }
+
+    /*Se escribe el grosor del logo y el tamaño del margen*/
+    .logo {
+        width: 150px;
+        margin: 1.5em;
+    }
+
+    /*No se muestra la clase show-desktop en un bloque aparte*/
+    .show-desktop {
+        display: block;
+    }
+
+    /*NO se muestra la clase hide-desktop*/
+    .hide-desktop {
+        display: none;
+    }
+
+    /*Se agregan las especificaciones para la clase menu*/
+    .menu {
+        background-color: #112935; 
+        position: static;
+        z-index: 20;
+        width: auto;
+        height:auto;
+        display: flex;
+        margin-top: 1em;
+    }
+
+    /*Especificaciones para la clase fa-fas-bar cambiando margin a 50em*/
+    .fas.fa-bar{
+        margin-left: 50em;
+        font-size: 50px;
+        align-content: center;
+    }
+
+
+    /*A cada una de las orillas de los artículos se le hace un pequeño redondeado, se pone un color de fondo,  
+    se alinea el texto al lado izquierdo y se especifican los valores del padding superior y del grosor del
+    artículo*/
+    .post ul li article {
+        overflow: hidden;
+        border-radius: 10px;
+        background-color: #ffffff;
+        text-align: left;
+        padding-bottom: 2em;
+        width: 700px;
+    }
+
+
 }
 
-/*Se agrega una media query con el tama;o de la pantalla de iPhone**/
-@media only screen and (max-width: 750px) {
+/*Se agrega una media query con el tamaño de la pantalla de iPhone 6/7/8 Plus*/
+@media only screen and (max-width: 414px) and (max-width: 736) {
 
+    /*Se aplica flex wrap para que se muestre uno sobre otro*/
     .about .container{
         display:flex;
         flex-wrap: wrap;
         justify-content: center;
     }
 
+    /*Para el header se aplica flex utilizando la propiedad space between y se ajustan los margenes de cada lado*/
     .header {
         display: flex;
         justify-content: space-between;
         margin-right: 0.75em;
         margin-left: 0.75em;
     }
-    
-    .options{
-        display: flex;
-        flex-wrap: wrap-reverse;
 
-    }
-
-/*cambiando margin a 50em*/
+    /*ESpecificaciones para la clase fa-fas-bar cambiando margin a 50em*/
     .fa-fas-bar{
         margin-left: 50em;
         font-size: 50px;
         align-content: center;
     }
 
+    /*Muestra el botón contacto al 100% de su tamaño*/
     input:last-child {
         width: 100%;
     }
 
     }
 
-    
-@media only screen and (min-width: 1440px) {
-
-    /*TODO: FALTA CSS */
+/*Agregando el 1920*/
+@media only screen and (min-width: 1920px) {
+        /*La clase containter con un grosor de 80%, el margen 0 arriba y abajo y auto de cada lado, 
+    con un maximo grosor de 1440*/
     .container {
         width: 80%;
         margin: 0 auto;
         max-width: 1440px;
     }
-}
-
-/*AGREGADO*/
-a.hide-mobile.show-desktop{
-    margin-top: -1em;
-    margin-bottom: 0.5em;
-    justify-content: center;
-    font-size: 8em;
-    color:#0AC693
-}
-/*Agregando el 1920*/
-
-@media only screen and (min-width: 1920px){
-
-}
-
-.show-desktop { 
-    font-size: 15px;
 }
